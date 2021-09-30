@@ -35,7 +35,7 @@ You are now ready to run the script -
 ./azure-pal-link.sh <MPN ID> <Partner/Solution Name> <Resource Group Name>
 ```
 
-Descriptio of parameters -
+Description of parameters -
 - MPN ID - MPN ID of the partner
 - Partner/Solution Name - The name of the partner or the solution. This will be used to create a service principal
 - Resource Group Name - The name of the resource group in customer subscription where the Azure resources reside
