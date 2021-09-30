@@ -2,8 +2,9 @@
 
 if [ $# -le 3 ]
 then
+    echo ERROR:
     echo insufficient parameters provided.
-    echo syntax: ./azure-pal-link.sh <MPN ID> <Parter Name> <Resource Group Name> 
+    echo syntax: './azure-pal-link.sh <MPN ID> <Parter Name> <Resource Group Name>'
     exit 0
 fi
 
