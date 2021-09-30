@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ $# -le 3 ]
+if [ $# -lt 3 ]
 then
     echo ERROR:
     echo insufficient parameters provided.
@@ -30,6 +30,15 @@ fi
 
 echo creating service principal \*\*$SP_NAME\*\* and assign role on the scope...
 SP_PASS=$(az ad sp create-for-rbac --name $SP_NAME --role Reader --scopes $RBAC_SCOPE --query password -o tsv)
+
+if [ ! $SP_PASS ]
+then
+    echo ERROR:
+    echo could not create service principal.
+    echo please see the error above and rectify.
+    echo
+    exit 0
+fi
 
 echo fetching the appId of the service principal \*\*$SP_NAME\*\*...
 SP_ID=$(az ad sp list --display-name $SP_NAME --query [].appId -o tsv )
