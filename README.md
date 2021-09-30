@@ -12,7 +12,7 @@ To do this, access to resources in customer subscription is the primary requirem
 3. Service Principal - If the above scenarios are not possible, a [Service Principal](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals?WT.mc_id=devops-10986-petender#service-principal-object) in the customer tenant can also be used
 4. Azure Lighthouse - Your customer can delegate a subscription (or resource group) so that your users can work on it from within your tenant. See more on [Azure Lighthouse](https://docs.microsoft.com/en-us/azure/lighthouse/overview)
 
-The MPN ID of the partner is a required input as well. This ID can retrieved from [Microsoft Partner Network](https://docs.microsoft.com/en-us/azure/lighthouse/overview) portal from the parter profile.
+The MPN ID of the partner is a required input as well. This ID can be retrieved from [Microsoft Partner Network](https://docs.microsoft.com/en-us/azure/lighthouse/overview) portal from the parter profile.
 
 ## How does it work?
 
