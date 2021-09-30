@@ -27,5 +27,5 @@ For simplicity, the *azure-pal-link* script creates a service principal with Rea
 Start a BASH shell at [Azure Cloud Shell](https://shell.azure.com) and download the script -
 ```
 cd clouddrive
-
+wget https://raw.githubusercontent.com/ashisa/azure-pal-link/main/azure-pal-link.sh
 ``` 

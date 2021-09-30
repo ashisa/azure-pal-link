@@ -1,4 +1,12 @@
 #!/bin/sh
+
+if [ $# -le 3 ]
+then
+    echo insufficient parameters provided.
+    echo syntax: ./azure-pal-link.sh <MPN ID> <Parter Name> <Resource Group Name> 
+    exit 0
+fi
+
 MPN_ID=$1
 SP_NAME=$(echo $2)-sp-for-pal
 RES_GROUP_NAME=$3
