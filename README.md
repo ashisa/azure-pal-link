@@ -1,12 +1,12 @@
-# azure-pal-link
-
-The *azure-pal-link* is a script that can automatically link an MPN ID with resources in an Azure subscription. This script cab be executed in the [Azure Cloud Shell](https://azure.microsoft.com/en-in/features/cloud-shell/#overview) quickly.
+# Automate Parter Admin Link with *azure-pal-link*
 
 Partner Admin Link process allows Azure partners to link their Microsoft Partner Network (MPN) ID with the Azure resources that they manage and maintain in the customer subscriptions.
 
+The *azure-pal-link* is a script that can automatically link an MPN ID with resources in an Azure subscription. This script can be executed in the [Azure Cloud Shell](https://azure.microsoft.com/en-in/features/cloud-shell/#overview) quickly.
+
 [PAL enables Microsoft to identify and recognize partners who drive Azure customer success. Microsoft can attribute influence and Azure consumed revenue to your organization based on the account's permissions (Azure role) and scope (subscription, resource group, resource).](https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/link-partner-id)
 
-Access to resources in customer subscription is the primary requirement to complete this process. The access can be provided using any one of the following -
+To do this, access to resources in customer subscription is the primary requirement. The access can be provided using any one of the following -
 1. Guest user access - Your customer can invite users from partner tenant
 2. Directory account - The customer can create user accounts in their tenant and grant them access to manage the resources
 3. Service Principal - If the above scenarios are not possible, a [Service Principal](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals?WT.mc_id=devops-10986-petender#service-principal-object) in the customer tenant can also be used
