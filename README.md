@@ -40,6 +40,6 @@ Description of parameters -
 - Partner/Solution Name - The name of the partner or the solution. This will be used to create a service principal
 - Resource Group Name - The name of the resource group in customer subscription where the Azure resources reside
 
-Keep an eye on the script execution. When the script finishes, you will all be set with Partner Admin Link process.
+Keep an eye on the script execution. When the script finishes, you will be all set with Partner Admin Link process.
 
 If you run in to any issues, please open an issue in this repo. Share relevant information for debugging.
