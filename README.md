@@ -27,5 +27,19 @@ For simplicity, the *azure-pal-link* script creates a service principal with Rea
 Start a BASH shell at [Azure Cloud Shell](https://shell.azure.com) and download the script -
 ```
 cd clouddrive
-wget https://raw.githubusercontent.com/ashisa/azure-pal-link/main/azure-pal-link.sh
-``` 
+wget --no-cache https://raw.githubusercontent.com/ashisa/azure-pal-link/main/azure-pal-link.sh -O ./azure-pal-link.sh
+```
+
+You are now ready to run the script -
+```
+./azure-pal-link.sh <MPN ID> <Partner/Solution Name> <Resource Group Name>
+```
+
+Descriptio of parameters -
+- MPN ID - MPN ID of the partner
+- Partner/Solution Name - The name of the partner or the solution. This will be used to create a service principal
+- Resource Group Name - The name of the resource group in customer subscription where the Azure resources reside
+
+Keep an eye on the script execution. When the script finishes, you will all be set with Partner Admin Link process.
+
+Open issue in this repo, if you run in to any issues. Share relevant information for debugging.

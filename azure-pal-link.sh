@@ -4,7 +4,7 @@ if [ $# -lt 3 ]
 then
     echo ERROR:
     echo insufficient parameters provided.
-    echo syntax: './azure-pal-link.sh <MPN ID> <Parter Name> <Resource Group Name>'
+    echo syntax: './azure-pal-link.sh <MPN ID> <Parter/Solution Name> <Resource Group Name>'
     echo 
     exit 0
 fi
@@ -23,7 +23,7 @@ if [ ! $RBAC_SCOPE ]
 then
     echo ERROR:
     echo resoure group $RES_GROUP_NAME does not exist.
-    echo please check the input and re-run the script.
+    echo please check the resource group name and re-run the script.
     echo
     exit 0
 fi
