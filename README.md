@@ -42,4 +42,4 @@ Descriptio of parameters -
 
 Keep an eye on the script execution. When the script finishes, you will all be set with Partner Admin Link process.
 
-Open issue in this repo, if you run in to any issues. Share relevant information for debugging.
+If you run in to any issues, please open an issue in this repo. Share relevant information for debugging.
