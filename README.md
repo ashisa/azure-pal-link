@@ -1,4 +1,4 @@
-# *azure-pal-link*
+# azure-pal-link
 
 The *azure-pal-link* is a script that can automatically link an MPN ID with resources in an Azure subscription. This script cab be executed in the [Azure Cloud Shell](https://azure.microsoft.com/en-in/features/cloud-shell/#overview) quickly.
 
