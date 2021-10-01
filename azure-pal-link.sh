@@ -71,8 +71,10 @@ do
     fi
     if [ $status -eq 1 ]
     then
-        echo will retry in 3 seconds \(5 retries\)...
+        echo login failed. will retry in 3 seconds \(5 retries\)...
         sleep 3
+    else
+        echo login successful.
     fi
 done
 
