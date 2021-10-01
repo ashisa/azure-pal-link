@@ -36,10 +36,18 @@ You are now ready to run the script -
 ```
 
 Description of parameters -
-- MPN ID - MPN ID of the partner
-- Partner/Solution Name - The name of the partner or the solution. This will be used to create a service principal
-- Resource Group Name - The name of the resource group in customer subscription where the Azure resources reside
+1. MPN ID - MPN ID of the partner
+2. Partner/Solution Name - The name of the partner or the solution. This will be used to create a service principal
+3. Resource Group Name - The name of the resource group in customer subscription where the Azure resources reside
 
 Keep an eye on the script execution. When the script finishes, you will be all set with Partner Admin Link process.
 
 If you run in to any issues, please open an issue in this repo. Share relevant information for debugging.
+
+## Security practices employed
+
+The script uses the logged in user's security context. Following security aspects have been considered during the execution -
+- While creating the service principal, it relies on the AZ CLI's built-in functionality of generating a random secret. This secret is stored in the SP_PASS variable temporarily and is discarded immediately after the MPN ID has been linked. You will have to regenerate a new secret if you want to reuse the service principal for any other purposes.
+- The role assignment for the service principal is set to "Reader" which allows the service principal only read access on the resource group scope - the service principal credentials cannot be used to make any changes to any resource
+- At the end of the execution, the script changes AZ CLI authentication context back to the logged user from the service principal.
+  
