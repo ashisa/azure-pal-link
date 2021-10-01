@@ -83,7 +83,7 @@ then
     echo
 
     echo removing the app secret from environment variable...
-    set SP_PASS=INVALID
+    export SP_PASS=INVALID
 
     echo switching back to authenticated user...
     az login --identity
