@@ -18,9 +18,10 @@ The MPN ID of the partner is a required input as well. This ID can be retrieved 
 
 For simplicity, the *azure-pal-link* script creates a service principal with Reader access to a resource group in the customer subscription. A user in the customer tenant with Owner access is required to execute this script. Following are the steps that it performs -
 1. Create Service Principal in customer tenant
-2. Create a "Reader" role assignment under the resource group scope that was provided on the command line
-3. Use the Service Principal credentials to create a session
-4. Link the partner ID
+2. Get the scopes for the resource groups provided on the command line
+3. Create a "Reader" role assignment for the resource group scopes
+4. Use the Service Principal credentials to create a session
+5. Link the partner ID
 
 ## Executing the script
 
