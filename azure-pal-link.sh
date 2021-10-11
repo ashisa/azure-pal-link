@@ -4,34 +4,40 @@ if [ $# -lt 3 ]
 then
     echo ERROR:
     echo insufficient parameters provided.
-    echo syntax: './azure-pal-link.sh <MPN ID> <Parter/Solution Name> <Resource Group Name>'
-    echo 
+    echo syntax: './azure-pal-link.sh <MPN ID> <Parter/Solution Name> <Resource Group Names>'
+    echo
     exit 0
 fi
 
 MPN_ID=$1
-SP_NAME=$(echo $2)-sp-for-pal
-RES_GROUP_NAME=$3
+shift
+SP_NAME=$(echo $1)-sp-for-pal
+shift
+RES_GROUP_NAMES=$*
 
 echo fetching the tenant id...
 TENANT_ID=$(az account show --query tenantId -o tsv)
 echo
 
-echo checking if the resource group \*\*$RES_GROUP_NAME\*\* exists and getting the scope...
-RBAC_SCOPE=$(az group list --query "[?name=='$RES_GROUP_NAME'].id" -o tsv)
+echo checking if the resource groups exists and getting the scopes...
+for i in $RES_GROUP_NAMES
+do
+    echo looking up $i...
+    RBAC_SCOPE=$(az group list --query "[?name=='$i'].id" -o tsv)
+    if [ ! $RBAC_SCOPE ]
+    then
+        echo ERROR:
+        echo resoure group $i does not exist.
+        echo please check the resource group names and re-run the script.
+        echo
+        exit 0
+    fi
+    RBAC_SCOPES="$RBAC_SCOPES $RBAC_SCOPE"
+done
 echo
 
-if [ ! $RBAC_SCOPE ]
-then
-    echo ERROR:
-    echo resoure group $RES_GROUP_NAME does not exist.
-    echo please check the resource group name and re-run the script.
-    echo
-    exit 0
-fi
-
 echo creating service principal \*\*$SP_NAME\*\* and assign role on the scope...
-SP_PASS=$(az ad sp create-for-rbac --name $SP_NAME --role Reader --scopes $RBAC_SCOPE --query password -o tsv)
+SP_PASS=$(az ad sp create-for-rbac --name $SP_NAME --role Reader --scopes $RBAC_SCOPES --query password -o tsv)
 echo
 
 if [ ! $SP_PASS ]

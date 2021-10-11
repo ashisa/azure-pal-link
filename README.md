@@ -32,13 +32,13 @@ wget --no-cache https://raw.githubusercontent.com/ashisa/azure-pal-link/main/azu
 
 You are now ready to run the script -
 ```
-./azure-pal-link.sh <MPN ID> <Partner/Solution Name> <Resource Group Name>
+./azure-pal-link.sh <MPN ID> <Partner/Solution Name> <Resource Group Names>
 ```
 
 Description of parameters -
 1. MPN ID - MPN ID of the partner
 2. Partner/Solution Name - The name of the partner or the solution. This will be used to create a service principal
-3. Resource Group Name - The name of the resource group in customer subscription where the Azure resources reside
+3. Resource Group Names - The names of the resource groups space-separated in customer subscription where the Azure resources reside
 
 Keep an eye on the script execution. When the script finishes, you will be all set with Partner Admin Link process.
 
